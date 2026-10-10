@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f8f5;
+    color: #24352c;
+}
+
+header {
+    background-color: #dcefe2;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #245b43;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #478665;
+    transform: translateY(-3px);
+}
+
+nav a:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
+}
+
+/* Skip link: visible only when focused */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: white;
+    color: #173d2b;
+    padding: 12px;
+    border: 2px solid #245b43;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 24px;
+}
+
+/* Box model for all images */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid white;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #00000020;
+}
+
+/* Grid layout for gallery */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px #00000030;
+}
+
+/* Advanced selector: every even image */
+.grid img:nth-child(even) {
+    border-radius: 30px 8px 30px 8px;
+}
+
+/* Flex layout for travel page */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Advanced selector: every odd image */
+.flex img:nth-child(odd) {
+    border-radius: 30px;
+}
+
+.flex img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #245b43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 8px;
+    }
+}
